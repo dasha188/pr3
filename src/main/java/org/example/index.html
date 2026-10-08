@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFlow — Регистрация на мероприятие</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <a class="logo" href="#">
+            <span class="logo__mark">CF</span>
+            <span class="logo__text">CampusFlow</span>
+        </a>
+        <nav class="nav">
+            <a href="#">Каталог</a>
+            <a href="#">Мои события</a>
+            <a href="#" class="nav__link--active">Профиль</a>
+        </nav>
+        <div class="header__actions">
+            <input class="search" type="search" placeholder="Поиск">
+            <div class="avatar">AV</div>
+        </div>
+    </div>
+</header>
+
+<main class="page">
+    <div class="container">
+        <h1 class="page__title">
+            Регистрация на мероприятие «Семантический HTML без лишних div» с контролем
+            расхождения ключевых элементов не более трёх-пяти пикселей
+        </h1>
+        <p class="page__subtitle">Заполните данные. Поля со звёздочкой обязательны.</p>
+
+        <div class="layout">
+            <form class="card form" novalidate>
+                <h2 class="card__title">Контактные данные</h2>
+
+                <label class="field">
+                    <span class="field__label">Имя и фамилия *</span>
+                    <input class="field__input" type="text"
+                           value="Константинопольский Александр Владимирович">
+                    <input class="field__input" type="text"
+                           value="ООО «Международная промышленно-инвестиционная корпорация»">
+                </label>
+
+                <label class="field">
+                    <span class="field__label">E-mail *</span>
+                    <input class="field__input" type="email" value="student@example.com" required>
+                </label>
+
+                <label class="field">
+                    <span class="field__label">Группа / команда</span>
+                    <input class="field__input" type="text" value="ИТИС-41">
+                </label>
+
+                <fieldset class="field field--radio">
+                    <legend class="field__label">Формат участия *</legend>
+                    <label class="radio">
+                        <input type="radio" name="format" checked>
+                        <span>Очно</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="format">
+                        <span>Онлайн</span>
+                    </label>
+                </fieldset>
+
+                <label class="field">
+                    <span class="field__label">Комментарий</span>
+                    <textarea class="field__textarea" rows="4" placeholder="https://campusflow.example.com/events/registration/very/long/path/without/spaces"></textarea>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span>Я согласен с правилами участия</span>
+                </label>
+
+                <div class="form__actions">
+                    <button class="btn btn--primary" type="submit">Отправить заявку</button>
+                    <button class="btn btn--ghost" type="button">Отмена</button>
+                </div>
+            </form>
+
+            <aside class="card states">
+                <h2 class="card__title">Состояния формы</h2>
+
+                <section class="state">
+                    <h3 class="state__title">1. Ошибка обязательного поля</h3>
+                    <label class="field">
+                        <span class="field__label">E-mail *</span>
+                        <input class="field__input field__input--error" type="email" value="student@" required>
+                        <span class="field__error">Введите корректный e-mail</span>
+                    </label>
+                </section>
+
+                <section class="state">
+                    <h3 class="state__title">2. Отправка</h3>
+                    <button class="btn btn--primary btn--loading" disabled>Отправка...</button>
+                    <p class="state__hint">Кнопка недоступна до завершения.</p>
+                </section>
+
+                <section class="state">
+                    <h3 class="state__title">3. Успех</h3>
+                    <div class="success">
+                        <p class="success__title">✓ Заявка принята</p>
+                        <p class="success__text">Подтверждение отправлено на почту.</p>
+                        <a class="success__link" href="#">Перейти в «Мои события» →</a>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
